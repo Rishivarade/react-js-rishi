@@ -1,5 +1,5 @@
 import './App.css';
-import Post from './Post';
+import Post from './componets/Post';
 import { useState } from 'react';
 
 function App() {
