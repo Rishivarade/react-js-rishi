@@ -28,7 +28,7 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>+1</button>
       <button onClick={() => setCount(0)}>Reset</button>
       <p><strong>Count:</strong> {count}</p>
-      <div><strong>Even:</strong> {isEven(count) ? "Even" : "Odd"}</div>
+      <div><strong>The Number is:</strong> {isEven(count) ? "Even" : "Odd"}</div>
       <div><strong>Prime: </strong>{isPrime(count) ? "True" : "False"}</div>
     </div>
   );
