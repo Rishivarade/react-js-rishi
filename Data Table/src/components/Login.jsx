@@ -21,7 +21,7 @@ const Login = () => {
   return (
     <div style={{margin:"auto",textAlign:"center",backgroundImage:" linear-gradient(to bottom right, #5761B2, #1FC5A8)",paddingBottom:"5%"}}>
         <h1>LOGIN</h1> 
-        <form style={{border:"2px solid black",width:"25%",margin:"auto",padding:"10px"}} action="" onSubmit={(e)=>handlesubmit(e)}>
+        <form className='log' style={{border:"2px solid black",margin:"auto",padding:"10px"}} action="" onSubmit={(e)=>handlesubmit(e)}>
           <input type="email" onChange={(e)=>setemail(e.target.value)} placeholder='Enter Email...' /><br/><br/>
           <input type="password" onChange={(e)=>setpassword(e.target.value)} placeholder='Enter Password...' /><br/><br/>
           <input type="submit" />

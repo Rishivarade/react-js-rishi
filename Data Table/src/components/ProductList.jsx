@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
 // Get Function
@@ -24,6 +25,7 @@ const About = () => {
       .then((res) => {
         setProduct(res.data);
         setFilteredProduct(res.data);
+        settotalpage(res.headers['x-total-count']/5)
       })
       .catch((err) => console.log(err));
   };
@@ -60,8 +62,10 @@ const About = () => {
   }, [page,selectCategory,order]);
 
   return (
-    <div>
+    <Container>
+      <div>
       <h1 style={{ textAlign: "center" }}>PRODUCT</h1>
+      <Row>
       <div className="div" style={{ display: "flex", justifyContent: "space-between" }}>
         <button onClick={handleLogout}>LOG OUT</button>
         <select name="" id="" onChange={(e)=>setselectCategory(e.target.value)}>
@@ -76,7 +80,9 @@ const About = () => {
           <button onClick={()=>setorder("desc")}>HIGH-TO-LOW</button>
         </div>
       </div>
+      </Row>
       <hr />
+      <Row>
       <div style={{ display: "flex", justifyContent: "center", marginBottom: "15px" }}>
         <input
           type="text"
@@ -86,7 +92,9 @@ const About = () => {
           style={{ padding: "8px", width: "300px" }}
         />
       </div>
-      <div className='running' style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "5px", textAlign: "center"}}>
+      </Row>
+      <Row>
+      <div className='running'>
         {filteredProduct.map((el) => (
           <div key={el.id} style={{ boxShadow: " rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",padding:"10px" }}>
             <Link style={{ textDecoration: "none", color: "black" }} to={`/descriptionpage/${el.id}`}>
@@ -100,13 +108,18 @@ const About = () => {
           </div>
         ))}
       </div>
+      </Row>
       {/* Pagination */}
+      <Row>
       <div className="div" style={{ display: "flex", justifyContent: "center", marginTop: "15px" }}>
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>PREV</button>
         <span>{page}</span>
-        <button onClick={() => setPage(page + 1)}>NEXT</button>
+        <button onClick={() => setPage(page + 1)} disabled={page==totalpage}>NEXT</button>
       </div>
+      </Row>
     </div>
+    </Container>
+    
   );
 };
 

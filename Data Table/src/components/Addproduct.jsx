@@ -29,7 +29,7 @@ const Addproduct = () => {
   return (
     <div style={{display:"flex-column",marginTop:"20px",textAlign:"center",paddingBottom:"5%",backgroundImage:"linear-gradient(to bottom right, #0100EC, #FB36F4)"}}>
       <h1 style={{color:"white"}}>ADD PRODUCT</h1>
-      <form style={{border:"2px solid black",width:"20%",textAlign:"center",margin:"auto",padding:"10px",backgroundImage:" linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"}} action="" onSubmit={(e)=>handlesubmit(e)}>
+      <form className='add' style={{border:"2px solid black",textAlign:"center",margin:"auto",padding:"10px",backgroundImage:" linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"}} action="" onSubmit={(e)=>handlesubmit(e)}>
         <input type="text" placeholder='image' name='image' value={image} onChange={(e) => handlechange(e)} /><br/><br/>
         <input type="text" placeholder='title' name='title' value={title} onChange={(e) => handlechange(e)} /><br/><br/>
         <select name="category" value={category} onChange={(e) => handlechange(e)} id="">

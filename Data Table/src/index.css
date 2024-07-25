@@ -4,19 +4,23 @@ header {
     padding: 1rem;
     text-align: center;
 }
+
 nav {
     margin: 1rem 0;
     text-align: center;
 }
+
 nav a {
     margin: 0 1rem;
     text-decoration: none;
     color: #4CAF50;
 }
+
 main {
     padding: 1rem;
     text-align: center;
 }
+
 footer {
     background-color: #5e5a5a;
     color: #fcf5f5;
@@ -26,6 +30,7 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
 .running {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -36,10 +41,107 @@ footer {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
-    }   
+    }
+}
+
+.running {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.running .product-card {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    padding: 10px;
+}
+
+.running .product-card img {
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+}
+
+.running .product-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.log {
+    width: 25%;
+}
+.add {
+    width: 25%;
+}
+.edit {
+    width: 25%;
+}
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .running {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .running {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .running {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .log {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .running {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .log {
+        width: 50%;
+    }
+    .add {
+        width: 50%;
+    }
+    .edit {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .running {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .log {
+        width: 50%;
+    }
+    .add {
+        width: 50%;
+    }
+    .edit {
+        width: 50%;
+    }
+}
+
+@media (max-width: 320px) {
+    .running {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

@@ -40,7 +40,7 @@ const Editpage = () => {
     return (
         <div style={{paddingBottom:"5%"}}>
             <h1 style={{textAlign:"center",color:"whitesmoke"}}>Edit Product</h1>
-            <form style={{border:"2px solid black",width:"25%",textAlign:"center",margin:"auto",padding:"10px"}} action="" onSubmit={(e) => handlesubmit(e)}>
+            <form className='edit' style={{border:"2px solid black",textAlign:"center",margin:"auto",padding:"10px"}} action="" onSubmit={(e) => handlesubmit(e)}>
                 <input type="text" placeholder='image' name='image' value={image} onChange={(e) => handlechange(e)} /><br/><br/>
                 <input type="text" placeholder='title' name='title' value={title} onChange={(e) => handlechange(e)} /><br/><br/>
                 <select name="category" value={category} onChange={(e) => handlechange(e)} id="">
