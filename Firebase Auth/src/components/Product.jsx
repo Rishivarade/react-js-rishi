@@ -1,7 +1,18 @@
 import axios from 'axios'
+import { signOut } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { auth } from '../Firebase/firebase'
 
 const Product = () => {
+  const navigate =useNavigate()
+  const handlelogout=async()=>{
+    await signOut (auth)
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    navigate("/signup")
+
+  }
     const[data,setdata]=useState([])
     const getdata =()=>{
         axios.get('https://fakestoreapi.com/products')
@@ -18,6 +29,7 @@ const Product = () => {
   return (
     <div>
       <h1>Product</h1>
+      <button onClick={handlelogout}>Logout</button>
       <div className="div" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px"}}>
         {
             data.map((el)=>(
