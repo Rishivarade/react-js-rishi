@@ -37,10 +37,10 @@ const Editpage = () => {
     const getSingleEdit = async (id) => {
         try {
             const docRef = doc(db, "products", id);
-            const docSnap = await getDoc(docRef);
-            if (docSnap.exists()) {
-                console.log(docSnap.data());
-                setformdata(docSnap.data());
+            const res = await getDoc(docRef);
+            if (res.exists()) {
+                console.log(res.data());
+                setformdata(res.data());
             } else {
                 console.log("No such document!");
             }

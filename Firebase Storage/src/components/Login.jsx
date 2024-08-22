@@ -11,9 +11,9 @@ const Login = () => {
         .catch((err)=>console.log(err))
     }
   return (
-    <div style={{textAlign:"center",border:"2px solid",width:'20%',margin:"auto",padding:"10px",marginTop:"5%"}}>
-      <h1>login</h1>
-      <div style={{border:"1px solid",margin:"auto"}}>
+    <div style={{textAlign:"center",color:"white"}}>
+      <h1>Login</h1>
+      <div style={{border:"1px solid",margin:"auto",textAlign:"center",border:"2px solid",width:'20%',padding:"10px"}}>
             <GoogleButton onClick={handlelogin  }/>
         </div>
     </div>  

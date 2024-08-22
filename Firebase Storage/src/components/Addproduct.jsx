@@ -28,8 +28,8 @@ const Addproduct = () => {
 
     return (
         <div>
-            <h1 style={{ textAlign: 'center' }}>ADD Product Here...</h1>
-            <form style={{ border: "2px solid black", textAlign: "center", margin: "auto", padding: "10px", width: '30%' }} onSubmit={handleSubmit}>
+            <h1 style={{ textAlign: 'center',color:'white'}}>ADD Product Here...</h1>
+            <form style={{ border: "2px solid white", textAlign: "center", margin: "auto", padding: "10px", width: '30%',backgroundColor:"midnightblue"}} onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="image"

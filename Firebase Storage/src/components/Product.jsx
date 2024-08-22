@@ -37,16 +37,16 @@ const Product = () => {
     },[])
   return (
     <div>
-      <h1 style={{textAlign:"center"}}>Product</h1>
+      <h1 style={{textAlign:"center",color:"white"}}>Product</h1>
       <div className="div" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",textAlign:"center",gap:"10px"}}>
       {
         data.map((el)=>(
-            <div key={el.id} style={{border:"2px solid black",padding:"5px"}}>
+            <div className='pro' key={el.id} style={{border:"2px solid black",padding:"5px"}}>
                 <img src={el.image} alt="" height={200} width={200} />
                 <h2>{el.title}</h2>
                 <h2>${el.price}</h2>
-                <button><Link style={{textDecoration:"none",color:"black"}} to={`/edit/${el.id}`}>EDIT</Link></button>
-                <button onClick={()=>deleteproduct(el.id)}>DELETE</button>
+                <button style={{backgroundColor:"green"}}><Link style={{textDecoration:"none",color:"black"}} to={`/edit/${el.id}`}>EDIT</Link></button>
+                <button style={{backgroundColor:"red"}} onClick={()=>deleteproduct(el.id)}>DELETE</button>
             </div>
         ))
       }
