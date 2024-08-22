@@ -1,6 +1,5 @@
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth';
-
 import { Navigate } from 'react-router-dom';
 import { auth } from '../Firebase/Firebase';
 const Privatepage = ({children}) => {
