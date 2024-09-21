@@ -1,14 +1,12 @@
-import { useContext, useEffect, useState } from "react"
+
 import ProductCard from "./ProductCard"
-import Loader from "./Loader"
+
 
 
 function ProductsTable(data) {
-  
-    // const {user}=useContext(Authcontext)
-    
+ 
     return (
-         <table border="1px">
+        <table border="1px">
             <thead>
                 <tr>
                     <th>Sno</th>
